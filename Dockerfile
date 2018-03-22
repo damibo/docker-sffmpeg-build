@@ -1,11 +1,8 @@
-FROM ubuntu:wily
+FROM ubuntu:latest
 
-RUN apt-get update \
-    && apt-get install -y \
-    git build-essential unzip \
-    cmake automake libtool libtool-bin pkg-config curl mercurial
+RUN apt-get update && apt-get install -y git build-essential unzip cmake automake libtool libtool-bin pkg-config curl mercurial autoconf build-essential libass-dev libfreetype6-dev libsdl2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev texinfo wget zlib1g-dev
 
-RUN git clone https://github.com/pyke369/sffmpeg.git
+RUN git clone https://github.com/pdiaz/sffmpeg.git
 
 WORKDIR /sffmpeg
 
